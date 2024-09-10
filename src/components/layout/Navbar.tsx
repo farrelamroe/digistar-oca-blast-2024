@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export function Navbar() {
   return (
-    <nav className="shadow-navbar fixed top-0 z-10 h-[67px] w-full bg-white pl-[23px] pr-[39px]">
+    <nav className="bg-neutral-10 fixed top-0 z-10 h-[67px] w-full pl-[23px] pr-[39px] shadow-navbar">
       <div className="flex flex-row justify-between">
         <Image
           src="/logo.png"
@@ -38,7 +38,9 @@ export function Navbar() {
               fill="#1D1B20"
             />
           </svg>
-          <div className="h-[35px] w-[35px] rounded-full bg-gradient-to-br from-red-100 via-blue-700 to-red-200"></div>
+          <div className="h-[35px] w-[35px] rounded-full border-[1px]">
+            <Image src="/home.png" alt="Foto" height={1000} width={1000} />
+          </div>
           <svg
             width="30"
             height="30"
