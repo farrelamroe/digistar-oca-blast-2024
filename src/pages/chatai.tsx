@@ -34,7 +34,11 @@ export default function ChatBox() {
 
     // Simulate AI bot response after 1 second
     setTimeout(() => {
-      const botMessage = getBotResponse()
+      var botMessage = getBotResponse()
+      if (input.trim() === 'Give me an example template email you recommend') {
+        botMessage =
+          'HUGE SALE! There is 9.9 time! Our Merchant start Flash Sale start in : 3hr 3m 3s START SHOP NOW (CTA)'
+      }
       setMessages((prevMessages) => [
         ...prevMessages,
         { text: botMessage, sender: 'bot' },
@@ -95,7 +99,7 @@ export default function ChatBox() {
           placeholder="Tell us what us want to broadcast"
           className="placeholder-accent-api-50 border-accent-api-30 h-[34px] w-full rounded-[32px] border-[1px] px-[10px] py-[20px] font-inter text-[10px] leading-[14px] tracking-[0.02em] text-neutral-90 focus:outline-none"
         />
-        <Button
+        <button
           onClick={handleSendMessage}
           className="bg-accent-1 h-[36px] w-[36px] items-center rounded-[32px]"
         >
@@ -127,7 +131,7 @@ export default function ChatBox() {
               </clipPath>
             </defs>
           </svg>
-        </Button>
+        </button>
       </div>
     </div>
   )

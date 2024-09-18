@@ -1,4 +1,14 @@
-import { Button, dataAddTemplate, Settings, Text, Timer } from '@/components'
+import {
+  Button,
+  ButtonTemplate,
+  dataAddTemplate,
+  Divider,
+  ImageTemplate,
+  Settings,
+  Text,
+  Timer,
+  Video,
+} from '@/components'
 import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react'
@@ -290,9 +300,13 @@ export default function AddTemplate() {
           </Button>
         </div>
         {/* Space for styling template */}
-        {redirect == 1 && <Settings />}
         {redirect == 0 && <Text />}
+        {redirect == 1 && <Settings />}
+        {redirect == 2 && <ImageTemplate />}
+        {redirect == 3 && <Video />}
+        {redirect == 4 && <ButtonTemplate />}
         {redirect == 5 && <Timer />}
+        {redirect == 6 && <Divider />}
       </div>
     </>
   )

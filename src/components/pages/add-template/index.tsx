@@ -1,3 +1,7 @@
 export * from './Settings'
 export * from './Text'
 export * from './Timer'
+export * from './ButtonTemplate'
+export * from './Divider'
+export * from './ImageTemplate'
+export * from './Video'
