@@ -1,5 +1,6 @@
 import { Navbar, Tablet } from '@/components'
 import Head from 'next/head'
+import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -10,7 +11,13 @@ export default function Home() {
       <main>
         <Navbar />
         <Tablet>
-          <h1>Hello, Welcome to OCA Blast</h1>
+          <Image
+            src="/hero.png"
+            height={1000}
+            width={1000}
+            alt=""
+            className="h-full w-full"
+          />
         </Tablet>
       </main>
     </>

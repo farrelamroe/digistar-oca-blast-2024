@@ -187,26 +187,32 @@ export default function AddTemplate() {
         <div className="flex h-[80vh] w-[38px] flex-col items-center">
           <div className="mb-[15px] rounded-[4px] border-[1px] border-accent-api-50 bg-neutral-10 p-[4px] text-center text-accent-api-50 duration-300 hover:cursor-pointer hover:border-accent-ai-50 hover:text-accent-ai-50">
             <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="mx-auto block"
             >
-              <path
-                d="M10.0001 1.66669L12.5751 6.88335L18.3334 7.72502L14.1667 11.7834L15.1501 17.5167L10.0001 14.8084L4.85008 17.5167L5.83341 11.7834L1.66675 7.72502L7.42508 6.88335L10.0001 1.66669Z"
-                stroke="currentColor"
-                stroke-width="2.08"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
+              <g clip-path="url(#clip0_624_2898)">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M6 5C5.73478 5 5.48043 5.10536 5.29289 5.29289C5.10536 5.48043 5 5.73478 5 6V7C5 7.26522 5.10536 7.51957 5.29289 7.70711C5.48043 7.89464 5.73478 8 6 8H8C8.26522 8 8.51957 7.89464 8.70711 7.70711C8.89464 7.51957 9 7.26522 9 7V6C9 5.73478 8.89464 5.48043 8.70711 5.29289C8.51957 5.10536 8.26522 5 8 5H6ZM3.87868 3.87868C4.44129 3.31607 5.20435 3 6 3H8C8.79565 3 9.55871 3.31607 10.1213 3.87868C10.6839 4.44129 11 5.20435 11 6V7C11 7.79565 10.6839 8.55871 10.1213 9.12132C9.55871 9.68393 8.79565 10 8 10H6C5.20435 10 4.44129 9.68393 3.87868 9.12132C3.31607 8.55871 3 7.79565 3 7V6C3 5.20435 3.31607 4.44129 3.87868 3.87868ZM6 14C5.73478 14 5.48043 14.1054 5.29289 14.2929C5.10536 14.4804 5 14.7348 5 15V18C5 18.2652 5.10536 18.5196 5.29289 18.7071C5.48043 18.8946 5.73478 19 6 19H8C8.26522 19 8.51957 18.8946 8.70711 18.7071C8.89464 18.5196 9 18.2652 9 18V15C9 14.7348 8.89464 14.4804 8.70711 14.2929C8.51957 14.1054 8.26522 14 8 14H6ZM3.87868 12.8787C4.44129 12.3161 5.20435 12 6 12H8C8.79565 12 9.55871 12.3161 10.1213 12.8787C10.6839 13.4413 11 14.2043 11 15V18C11 18.7957 10.6839 19.5587 10.1213 20.1213C9.55871 20.6839 8.79565 21 8 21H6C5.20435 21 4.44129 20.6839 3.87868 20.1213C3.31607 19.5587 3 18.7956 3 18V15C3 14.2044 3.31607 13.4413 3.87868 12.8787ZM15.2929 5.29289C15.4804 5.10536 15.7348 5 16 5H18C18.2652 5 18.5196 5.10536 18.7071 5.29289C18.8946 5.48043 19 5.73478 19 6V18C19 18.2652 18.8946 18.5196 18.7071 18.7071C18.5196 18.8946 18.2652 19 18 19H16C15.7348 19 15.4804 18.8946 15.2929 18.7071C15.1054 18.5196 15 18.2652 15 18V6C15 5.73478 15.1054 5.48043 15.2929 5.29289ZM16 3C15.2044 3 14.4413 3.31607 13.8787 3.87868C13.3161 4.44129 13 5.20435 13 6V18C13 18.7957 13.3161 19.5587 13.8787 20.1213C14.4413 20.6839 15.2043 21 16 21H18C18.7957 21 19.5587 20.6839 20.1213 20.1213C20.6839 19.5587 21 18.7957 21 18V6C21 5.20435 20.6839 4.44129 20.1213 3.87868C19.5587 3.31607 18.7956 3 18 3H16Z"
+                  fill="#6B778C"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_624_2898">
+                  <rect width="24" height="24" fill="white" />
+                </clipPath>
+              </defs>
             </svg>
+
             <p className="font-regular font-inter text-[8px] leading-[12px] tracking-[0.02em]">
               Layout
             </p>
           </div>
-          {dataAddTemplate.map(({ id, name }) => {
+          {dataAddTemplate.map(({ id, name, svg }) => {
             return (
               <>
                 <div className="mb-[3px] flex flex-col items-center justify-center">
@@ -214,22 +220,7 @@ export default function AddTemplate() {
                     className={`w-[38px] rounded-[4px] border-[1px] bg-neutral-10 p-[4px] text-center duration-300 hover:cursor-pointer hover:border-accent-ai-50 hover:text-accent-ai-50 ${redirect == id ? 'border-accent-ai-50 text-accent-ai-50' : 'border-accent-api-50 text-accent-api-50'}`}
                     onClick={() => setRedirect(id)}
                   >
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="mx-auto block"
-                    >
-                      <path
-                        d="M10.0001 1.66669L12.5751 6.88335L18.3334 7.72502L14.1667 11.7834L15.1501 17.5167L10.0001 14.8084L4.85008 17.5167L5.83341 11.7834L1.66675 7.72502L7.42508 6.88335L10.0001 1.66669Z"
-                        stroke="currentColor"
-                        stroke-width="2.08"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
+                    {svg}
                     <p className="font-regular font-inter text-[8px] leading-[12px] tracking-[0.02em]">
                       {name}
                     </p>
@@ -248,16 +239,14 @@ export default function AddTemplate() {
               viewBox="0 0 20 20"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="mx-auto block"
+              className="block mx-auto"
             >
               <path
-                d="M10.0001 1.66669L12.5751 6.88335L18.3334 7.72502L14.1667 11.7834L15.1501 17.5167L10.0001 14.8084L4.85008 17.5167L5.83341 11.7834L1.66675 7.72502L7.42508 6.88335L10.0001 1.66669Z"
-                stroke="currentColor"
-                stroke-width="2.08"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                d="M16.6665 1.66669H3.33317C2.4165 1.66669 1.6665 2.41669 1.6665 3.33335V18.3334L4.99984 15H16.6665C17.5832 15 18.3332 14.25 18.3332 13.3334V3.33335C18.3332 2.41669 17.5832 1.66669 16.6665 1.66669ZM16.6665 13.3334H4.99984L3.33317 15V3.33335H16.6665V13.3334Z"
+                fill="currentColor"
               />
             </svg>
+
             <p className="font-regular font-inter text-[8px] leading-[12px] tracking-[0.02em]">
               ChatAI
             </p>
